@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "MEANPROJECT"
+  "defaultProject": "MEANPROJECT",
+  "cli": {
+    "analytics": false
+  }
 }
