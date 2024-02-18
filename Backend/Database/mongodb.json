@@ -1,0 +1,28 @@
+use('myVirtualDatabase');
+db.createCollection('User',{ validator: { $jsonSchema: {
+  "bsonType": "object",
+  "required": [
+    "id",
+    "user_name",
+    "user_password",
+    "user_mail"
+  ],
+  "properties": {
+    "user_password": {
+      "bsonType": "string"
+    },
+    "user_mail": {
+      "bsonType": "string"
+    },
+    "user_name": {
+      "bsonType": "string"
+    },
+    "birth_date": {
+      "bsonType": "date"
+    },
+    "id": {
+      "bsonType": "int"
+    }
+  }
+} }});
+

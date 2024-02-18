@@ -1,0 +1,72 @@
+.body{
+    font-family: "EB Garamond", serif;
+        font-optical-sizing: auto;
+        font-weight: 500px;
+        font-style: normal;
+}
+.titre {
+    // <uniquifier>: Use a uniquifier for the class name
+        // <weight>: Use a value from 400 to 800
+    
+            font-family: "EB Garamond", serif;
+            font-optical-sizing: auto;
+            font-weight: 500px;
+            font-style: normal;
+};
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centrer les cards horizontalement */
+    margin: 0 auto;
+    /* Centrer les cards verticalement */
+}
+
+.service-card {
+    width: 200px;
+    /* Largeur des cards */
+    height: 200px;
+    /* Hauteur des cards */
+    margin: 10px;
+    /* Marge entre les cards */
+    padding: 20px;
+    /* Espace à l'intérieur des cards */
+    border: none;
+    /* Supprimer les bordures */
+    border-radius: 8px;
+    /* Bord arrondi */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Ombre légère */
+    text-align: center;
+    /* Centrer le contenu */
+}
+
+.service-icon {
+    width: 100px;
+    /* Largeur de l'icône */
+    height: 100px;
+    /* Hauteur de l'icône */
+    margin: 0 auto 10px;
+    /* Centrer l'icône verticalement et ajouter de l'espace en dessous */
+}
+
+.service-description {
+   
+    /* Taille de la description */
+font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+}
+
+.discover-link {
+    color: blue;
+    /* Couleur du lien */
+    text-decoration: none;
+    /* Supprimer le soulignement */
+}
+
+.discover-link:hover {
+    text-decoration: underline;
+    /* Souligner le lien au survol */
+}
