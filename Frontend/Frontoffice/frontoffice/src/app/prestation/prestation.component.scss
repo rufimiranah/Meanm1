@@ -1,7 +1,6 @@
 .body{
     font-family: "EB Garamond", serif;
         font-optical-sizing: auto;
-        font-weight: 500px;
         font-style: normal;
 }
 .titre {
@@ -16,57 +15,101 @@
 .service-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    /* Centrer les cards horizontalement */
-    margin: 0 auto;
-    /* Centrer les cards verticalement */
+    justify-content: space-between;
+    margin-left: 200px;
+    margin-right: 200px;
+    overflow-y: auto;
+    
 }
-
-.service-card {
-    width: 200px;
-    /* Largeur des cards */
-    height: 200px;
-    /* Hauteur des cards */
-    margin: 10px;
-    /* Marge entre les cards */
-    padding: 20px;
-    /* Espace à l'intérieur des cards */
-    border: none;
-    /* Supprimer les bordures */
-    border-radius: 8px;
-    /* Bord arrondi */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    /* Ombre légère */
-    text-align: center;
-    /* Centrer le contenu */
-}
-
-.service-icon {
-    width: 100px;
-    /* Largeur de l'icône */
-    height: 100px;
-    /* Hauteur de l'icône */
-    margin: 0 auto 10px;
-    /* Centrer l'icône verticalement et ajouter de l'espace en dessous */
-}
-
-.service-description {
-   
-    /* Taille de la description */
-font-family: "EB Garamond", serif;
+.sousPrestation{
+font-family: "Mulish", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400px;
     font-style: normal;
 }
-
-.discover-link {
-    color: blue;
-    /* Couleur du lien */
-    text-decoration: none;
-    /* Supprimer le soulignement */
+/* Pour alterner la couleur de fond */
+.service-card:nth-child(odd) {
+    background-color: white;
+    /* Ou n'importe quelle autre couleur de fond pour la carte impaire */
+}
+.service-card {
+    background-color: #D8C4A8;
+        /* Autres styles de votre carte */
+    /* Pour obtenir deux cartes par ligne avec un espacement entre elles */
+    margin-bottom: 20px;
+   
+    width: 300px;
+        /* Largeur de la carte */
+        height: 350px;
+   
+}
+.alternate-color {
+    background-color:#D8C4A8;
+}
+.service-card img {
+    max-width: 100%;
+    /* Les images ne dépasseront pas la largeur de la carte */
+    height: auto;
+    /* La hauteur des images s'ajustera automatiquement */
+    display: block;
+    /* Pour éviter les espaces supplémentaires sous les images */
+    margin-bottom: 10px;
+    /* Ajouter un espace entre l'image et le texte */
+}
+.service-card img {
+    width: 100px;
+    /* Définir la largeur souhaitée */
+    height: 100px;
+    /* Définir la hauteur souhaitée */
+    object-fit: cover;
+    /* Permet de redimensionner l'image tout en préservant son aspect ratio */
+    border-radius: 50%;
+    /* Pour arrondir les coins et obtenir une forme circulaire */
+}
+.sous-prestations-list {
+    list-style: none;
+    padding: 0;
 }
 
-.discover-link:hover {
-    text-decoration: underline;
-    /* Souligner le lien au survol */
+.sous-prestation-item {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.sous-prestation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-rendezvous {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-rendezvous:hover {
+    background-color: #0056b3;
+}
+
+.sous-prestation-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.delai {
+    margin: 0;
+}
+
+.prix {
+    margin: 0;
+}
+
+.sous-prestation-item {
+    margin-left: 400px;
+    margin-right: 400px;
 }

@@ -9,10 +9,34 @@
 <h1 class="titre">Carte des soins</h1>
 
 <div class="service-cards">
-    <div class="service-card" *ngFor="let service of services">
-        <img class="service-icon" [src]="service.icon" alt="{{ service.name }}">
-        <p class="service-description">{{ service.description }}</p>
-        <a class="discover-link" href="/details/{{ service.id }}">Découvrir</a>
+    <div class="service-card" *ngFor="let prestation of prestations; let i = index"
+        (click)="selectPrestation(prestation)">
+
+        <img [src]="images[i]" alt="{{ prestation.libelle_service }}">
+        <h2>{{ prestation.libelle_service }}</h2>
+        <p class="service-description">{{ prestation.description_service }}</p>
     </div>
 </div>
+
+<div class="sousPrestation" *ngIf="selectedPrestation">
+    <h1>Nos services au niveau de {{ selectedPrestation.libelle_service }}</h1>
+<div *ngIf="sousPrestations">
+    <ul class="sous-prestations-list">
+        <li *ngFor="let sousPrestation of sousPrestations" class="sous-prestation-item">
+            <h2>{{ sousPrestation.libelle_detail }}</h2>
+            <div class="sous-prestation-description">
+                <p>{{ sousPrestation.description_detail }}</p>
+                <button class="btn-rendezvous">Prendre rendez-vous</button>
+            </div>
+            <div class="sous-prestation-footer">
+                <p class="delai">{{ sousPrestation.delai_detail }} jours</p>
+                <p class="prix">{{ sousPrestation.prix_detail }} Ariary</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+</div>
+
+
 </body>

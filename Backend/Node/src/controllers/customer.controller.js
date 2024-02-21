@@ -11,12 +11,6 @@ async function signUp(req, res) {
   }
 }
 
-module.exports = {
-  signUp,
-};
-
-const customerService = require("../services/customer.service");
-
 async function login(req, res) {
   try {
     const { email, password } = req.body;
@@ -29,5 +23,6 @@ async function login(req, res) {
 }
 
 module.exports = {
+  signUp,
   login,
 };

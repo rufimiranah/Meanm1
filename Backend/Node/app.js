@@ -2,11 +2,11 @@
 const express = require("express");
 const app = express();
 const customerRoutes = require("./src/routes/customer.route.js");
+const prestationRoutes = require("./src/routes/prestation.route.js");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const expressListRoutes = require("express-list-routes");
-const { insert_Customer } = require("./src/services/utilisateur.service.js");
 
 mongoose.set("strictQuery", false);
 mongoose.connect(
@@ -30,3 +30,4 @@ app.use(
 app.use(bodyParser.json());
 
 app.use("/api/customers", customerRoutes);
+app.use("/api/prestations", prestationRoutes);
