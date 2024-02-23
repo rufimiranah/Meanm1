@@ -1,0 +1,14 @@
+{
+  "server": {
+    "host": "localhost",
+    "port": 3000
+  },
+  "database": {
+    "uri": "mongodb+srv://Meanm1db:MirantsoaSaotra@cluster0.lb6lr6y.mongodb.net/?retryWrites=true&w=majority"
+  },
+  "jwt": {
+    "accessTokenExpiresIn": 15,
+    "logLevel": "info",
+    "secret": "MeanM1"
+  }
+}
