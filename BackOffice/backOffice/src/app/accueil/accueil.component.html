@@ -1,1 +1,11 @@
-<p>accueil works!</p>
+<div class="content-wrapper">
+       <li *ngFor="let listeRDV of listeRDV">
+            <ul>Heure de rendez-vous :{{listeRDV.dateHeureRDV | date: 'dd-MM-yyyy HH:mm'}}</ul>
+            <ul>Description du service a effectuer :{{listeRDV.id_detail.libelle_detail}}</ul>
+            <ul>Nom du client : {{listeRDV.id_utilisateur.name}}</ul>
+            <ul>Nom de l'employe :{{listeRDV.id_employe.name}}</ul>
+            <ul>id : {{listeRDV._id}}</ul>
+            <ul>statut :{{listeRDV.statut}} </ul>
+            <button (click)="changeStatut(listeRDV._id , listeRDV.statut)">changer statut</button>
+       </li>
+</div>

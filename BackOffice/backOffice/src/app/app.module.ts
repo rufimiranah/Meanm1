@@ -8,13 +8,23 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AccueilComponent } from './accueil/accueil.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ContainerComponent } from './template/container/container.component';
+import { FooterComponent } from './template/footer/footer.component';
+import { TemplateComponent } from './template/template/template.component';
+import { NavbarComponent } from './template/navbar/navbar.component';
+import { HeaderComponent } from './template/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     AccueilComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ContainerComponent,
+    FooterComponent,
+    TemplateComponent,
+    NavbarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
