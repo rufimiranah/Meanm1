@@ -9,6 +9,7 @@ import { AccueilService } from './accueil.service';
 export class AccueilComponent {
   listeRDV : any;
   statutChangeLib : string="";
+  affiche:boolean = false
 
   constructor(private accueilService:AccueilService){}
 
@@ -21,15 +22,20 @@ export class AccueilComponent {
       const id_employe = localStorage.getItem('session');
       if(id_employe){
         let employe = JSON.parse(id_employe)
-        console.log(employe._id)
+       // console.log(employe._id)
         this.accueilService.listeRDVEmploye(employe._id).subscribe({
           next:(res:any) => {
-            if(res){
+            if(res.value.length>0){
+              this.affiche=true
               this.listeRDV = res.value;
              // console.log(res.value);
             }else{
-              console.log("ooo");
+              //this.listeRDV = res.message;
+              this.affiche=false;
             }
+          },
+          error: (error) => {
+              this.affiche=false;
           }
         })
       }

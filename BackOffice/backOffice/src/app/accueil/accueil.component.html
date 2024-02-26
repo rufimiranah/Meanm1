@@ -1,4 +1,5 @@
 <div class="content-wrapper">
+    <div *ngIf="affiche; else elseBlock ">
        <li *ngFor="let listeRDV of listeRDV">
             <ul>Heure de rendez-vous :{{listeRDV.dateHeureRDV | date: 'dd-MM-yyyy HH:mm'}}</ul>
             <ul>Description du service a effectuer :{{listeRDV.id_detail.libelle_detail}}</ul>
@@ -8,4 +9,8 @@
             <ul>statut :{{listeRDV.statut}} </ul>
             <button (click)="changeStatut(listeRDV._id , listeRDV.statut)">changer statut</button>
        </li>
+    </div>
+    <ng-template #elseBlock>
+        <p>Tsy misy</p>
+    </ng-template>
 </div>

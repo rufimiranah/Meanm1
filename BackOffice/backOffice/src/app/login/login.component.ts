@@ -22,7 +22,7 @@ export class LoginComponent {
     this.LoginService.checkLogin(body).subscribe({
       next: (res:any) => {
         if(res.message === "OK"){
-          console.log(res)
+          //console.log(res)
           localStorage.setItem('session', JSON.stringify(res.value));
           this.router.navigate(['/accueil']);
         }else{
