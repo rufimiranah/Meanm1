@@ -1,0 +1,34 @@
+<div class="content-wrapper">
+<div class="row">
+<div class="col-md-14 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <p class="card-title mb-0">Liste des employes</p>
+        <div class="table-responsive">
+          <table class="table table-striped table-borderless">
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>E-Mail</th>
+                <th>Description</th>
+                <th>Debut horaire</th>
+                <th>Fin horaire</th>
+              </tr>  
+            </thead>
+            <tbody>
+              <tr *ngFor="let listeEmploye of listeEmploye">
+                <td class="font-weight-bold">{{listeEmploye.name}}</td>
+                <td >{{listeEmploye.mail}}</td>
+                <td>{{listeEmploye.description}}</td>
+                <td >{{listeEmploye.debutHeure}} AM</td>
+                <td >{{listeEmploye.finHeure}} PM</td>
+                <td class="font-weight-medium"><div class="badge badge-warning">Modifier l'horaire de travail</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
