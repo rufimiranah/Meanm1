@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { TemplateComponent } from './template/template/template.component';
 import { DescriptionComponent } from './description/description.component';
+import { ListeServicesComponent } from './liste-services/liste-services.component';
+import { SousServicesComponent } from './sous-services/sous-services.component';
+import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 
 const routes: Routes = [
   { path: '', 
@@ -15,6 +18,15 @@ const routes: Routes = [
     },
     {
       path: 'description', component:DescriptionComponent
+    },
+    {
+      path: 'liste-services', component:ListeServicesComponent
+    },
+    {
+      path: 'liste-sous-services', component:SousServicesComponent
+    },
+    {
+      path: 'liste-employe', component:ListeEmployeComponent
     }
   ]
 

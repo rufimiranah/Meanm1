@@ -14,6 +14,9 @@ import { TemplateComponent } from './template/template/template.component';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { HeaderComponent } from './template/header/header.component';
 import { DescriptionComponent } from './description/description.component';
+import { ListeServicesComponent } from './liste-services/liste-services.component';
+import { SousServicesComponent } from './sous-services/sous-services.component';
+import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { DescriptionComponent } from './description/description.component';
     TemplateComponent,
     NavbarComponent,
     HeaderComponent,
-    DescriptionComponent
+    DescriptionComponent,
+    ListeServicesComponent,
+    SousServicesComponent,
+    ListeEmployeComponent
   ],
   imports: [
     BrowserModule,
