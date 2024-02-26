@@ -19,8 +19,8 @@ export class DescriptionComponent {
     console.log("ato");
     let body = {
       "description" : this.descriptionProfil,
-      "debutHoraire" : this.debutHoraire,
-      "finHoraire" : this.finHoraire
+      "debutHeure" : this.debutHoraire,
+      "finHeure" : this.finHoraire
     }
     const employe = localStorage.getItem('session');
     if(employe){
