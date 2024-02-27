@@ -20,6 +20,7 @@ import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 import { ListeRdvEmployeComponent } from './liste-rdv-employe/liste-rdv-employe.component';
 import { ModificationServiceComponent } from './modification-service/modification-service.component';
 import { ModificationSousServicesComponent } from './modification-sous-services/modification-sous-services.component';
+import { ModificationHoraireComponent } from './modification-horaire/modification-horaire.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ModificationSousServicesComponent } from './modification-sous-services/
     ListeEmployeComponent,
     ListeRdvEmployeComponent,
     ModificationServiceComponent,
-    ModificationSousServicesComponent
+    ModificationSousServicesComponent,
+    ModificationHoraireComponent
   ],
   imports: [
     BrowserModule,
