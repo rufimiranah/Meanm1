@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ListeServicesService } from './liste-services.service';
 import { Router } from '@angular/router';
-
+//manager
 @Component({
   selector: 'app-liste-services',
   templateUrl: './liste-services.component.html',
