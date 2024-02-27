@@ -27,4 +27,8 @@ export class ListeEmployeComponent {
     })
   }
 
+  test(){
+    console.log("ato");
+  }
+
 }
