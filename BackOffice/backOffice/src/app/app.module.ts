@@ -17,6 +17,9 @@ import { DescriptionComponent } from './description/description.component';
 import { ListeServicesComponent } from './liste-services/liste-services.component';
 import { SousServicesComponent } from './sous-services/sous-services.component';
 import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
+import { ListeRdvEmployeComponent } from './liste-rdv-employe/liste-rdv-employe.component';
+import { ModificationServiceComponent } from './modification-service/modification-service.component';
+import { ModificationSousServicesComponent } from './modification-sous-services/modification-sous-services.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
     DescriptionComponent,
     ListeServicesComponent,
     SousServicesComponent,
-    ListeEmployeComponent
+    ListeEmployeComponent,
+    ListeRdvEmployeComponent,
+    ModificationServiceComponent,
+    ModificationSousServicesComponent
   ],
   imports: [
     BrowserModule,

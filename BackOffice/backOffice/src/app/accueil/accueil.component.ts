@@ -8,13 +8,15 @@ import { AccueilService } from './accueil.service';
 })
 export class AccueilComponent {
   listeRDV : any;
+  listeRDVTermine:any;
   statutChangeLib : string="";
   affiche:boolean = false
 
   constructor(private accueilService:AccueilService){}
 
   ngOnInit(): void {
-    this.getListeRendezVousParEmploye()
+    this.getListeRendezVousParEmploye();
+    this.getListeRendezVousParEmployeTermine();
   }
 
   getListeRendezVousParEmploye(){
@@ -28,6 +30,31 @@ export class AccueilComponent {
             if(res.value.length>0){
               this.affiche=true
               this.listeRDV = res.value;
+             // console.log(res.value);
+            }else{
+              //this.listeRDV = res.message;
+              this.affiche=false;
+            }
+          },
+          error: (error) => {
+              this.affiche=false;
+          }
+        })
+      }
+    }
+  }
+
+  getListeRendezVousParEmployeTermine(){
+    if(localStorage.getItem('session')){
+      const id_employe = localStorage.getItem('session');
+      if(id_employe){
+        let employe = JSON.parse(id_employe)
+       // console.log(employe._id)
+        this.accueilService.listeRDVEmployeTermine(employe._id).subscribe({
+          next:(res:any) => {
+            if(res.value.length>0){
+              this.affiche=true
+              this.listeRDVTermine = res.value;
              // console.log(res.value);
             }else{
               //this.listeRDV = res.message;
