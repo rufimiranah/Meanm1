@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { SousServicesService } from './sous-services.service';
 import { Router } from '@angular/router';
-
+//manager
 @Component({
   selector: 'app-sous-services',
   templateUrl: './sous-services.component.html',
