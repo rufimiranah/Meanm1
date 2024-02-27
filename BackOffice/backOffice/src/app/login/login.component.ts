@@ -24,7 +24,7 @@ export class LoginComponent {
         if(res.message === "OK"){
           //console.log(res)
           localStorage.setItem('session', JSON.stringify(res.value));
-          this.router.navigate(['/accueil']);
+          this.router.navigate(['/liste-services']);
         }else{
           this.router.navigate(['/login']);
         }
