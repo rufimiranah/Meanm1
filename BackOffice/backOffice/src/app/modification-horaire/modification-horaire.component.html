@@ -1,1 +1,26 @@
-<p>modification-horaire works!</p>
+<div class="content-wrapper">
+    <div class="col-md-6 grid-margin stretch-card" style="margin-left:260px">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Modification des horaire </h4>
+            <p class="card-description">
+              Horaire de {{horaireEmploye?.name}}
+            </p>
+            <form class="forms-sample">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Debut horaire de travail</label>
+                <input type="number" class="form-control" [(ngModel)]="debutHoraire" name="debutHoraire" id="exampleInputEmail1" placeholder="" defaultValue="{{horaireEmploye?.debutHeure}}">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Fin horaire de travail</label>
+                <input type="number" class="form-control" [(ngModel)]="finHoraire" name="finHoraire" id="exampleInputEmail1" placeholder="" defaultValue="{{horaireEmploye?.finHeure}}">
+              </div>
+              <div class="form-check form-check-flat form-check-primary">
+              </div>
+              <button type="submit" class="btn btn-primary mr-2" (click)="modifyHoraire(horaireEmploye._id)">Submit</button>
+              <button class="btn btn-light">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
