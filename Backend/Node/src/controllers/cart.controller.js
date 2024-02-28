@@ -35,16 +35,17 @@ async function getHoraires(req, res) {
 }
 const createRdv = async (req, res) => {
   try {
-    const { id_utilisateur, id_employe, id_detail, dateRdv, statut } = req.body;
+    const { id_utilisateur, id_employe, id_detail, dateHeureRDV, statut } =
+      req.body;
 
     // Créer un nouveau rendez-vous
-    console.log(dateRdv);
+    console.log(dateHeureRDV);
 
     const newRdv = new RendezVous({
       id_utilisateur: new ObjectId(id_utilisateur),
       id_employe: new ObjectId(id_employe),
       id_detail: new ObjectId(id_detail),
-      dateHeureRDV: new Date(), // Convertir la date en objet Date
+      dateHeureRDV: dateHeureRDV, // Convertir la date en objet Date
       statut: statut,
     });
 

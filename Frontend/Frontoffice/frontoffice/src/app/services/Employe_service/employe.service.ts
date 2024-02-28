@@ -7,7 +7,7 @@ import { map } from 'rxjs/internal/operators/map';
   providedIn: 'root',
 })
 export class EmployeService {
-  private apiUrl = 'http://localhost:3000/api/cart';
+  private apiUrl = 'http://localhost:3000/cart';
   constructor(private http: HttpClient) {}
   getAllEmploye(): Observable<Employe_model[]> {
     return this.http

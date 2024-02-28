@@ -10,10 +10,10 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
   // Déclaration des propriétés
-  nom: string = '';
-  prenom: string = '';
-  email: string = '';
-  password: string = '';
+  name: string = '';
+  sexe: string = '';
+  mail: string = '';
+  mdp: string = '';
 
   constructor(
     private customerService: CustomerService,
@@ -28,10 +28,10 @@ export class SignupComponent {
       console.log(formData);
 
       const customerData = {
-        nom: formData.nom,
-        prenom: formData.prenom,
-        email: formData.email,
-        password: formData.password,
+        name: formData.name,
+        sexe: formData.sexe,
+        mail: formData.mail,
+        mdp: formData.mdp,
       };
       this.customerService.signUp(customerData).subscribe({
         next: (response) => {

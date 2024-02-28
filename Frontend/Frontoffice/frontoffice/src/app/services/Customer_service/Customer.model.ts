@@ -1,7 +1,7 @@
 export interface Customer_model {
   _id: String;
-  nom: String;
-  prenom: String;
-  email: String;
-  password: String;
+  name: String;
+  sexe: String;
+  mail: String;
+  mdp: String;
 }

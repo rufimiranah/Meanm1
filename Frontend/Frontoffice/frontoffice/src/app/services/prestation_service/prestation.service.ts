@@ -9,7 +9,7 @@ import { Sous_Services } from './prestation.model';
   providedIn: 'root',
 })
 export class PrestationService {
-  private apiUrl = 'http://localhost:3000/api/prestations/prestations';
+  private apiUrl = 'http://localhost:3000/prestations/prestations';
   constructor(private http: HttpClient) {}
 
   getAllPrestations(): Observable<Services[]> {
@@ -17,7 +17,11 @@ export class PrestationService {
   }
   getSousPrestations(id_service: string): Observable<Sous_Services[]> {
     return this.http.get<Sous_Services[]>(
-      `http://localhost:3000/api/prestations/sousprestations/${id_service}`
+      `http://localhost:3000/prestations/sousprestations/${id_service}`
     );
+  }
+  getSousServiceByid(id: string): Observable<Sous_Services[]> {
+    const url = `http://localhost:3000/prestations/sousservices/${id}`;
+    return this.http.get<Sous_Services[]>(url);
   }
 }

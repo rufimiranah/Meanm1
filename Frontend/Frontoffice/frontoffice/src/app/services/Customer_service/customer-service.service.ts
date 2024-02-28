@@ -15,7 +15,7 @@ export class CustomerService {
     localStorage.removeItem('token');
   }
 
-  private baseUrl = 'http://localhost:3000/api/customers';
+  private baseUrl = 'http://localhost:3000/customers';
 
   constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {}
 
@@ -23,11 +23,11 @@ export class CustomerService {
     return this.http.post(`${this.baseUrl}/signup`, customerData);
   }
 
-  login(email: string, password: string) {
+  login(mail: string, mdp: string) {
     return this.http
       .post<{ token: string; userId: string }>(`${this.baseUrl}/login`, {
-        email,
-        password,
+        mail,
+        mdp,
       })
       .pipe(
         tap((response) => {

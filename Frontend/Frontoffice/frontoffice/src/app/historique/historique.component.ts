@@ -1,31 +1,30 @@
 import { Component } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-historique',
   templateUrl: './historique.component.html',
   styleUrls: ['./historique.component.scss'],
 })
 export class HistoriqueComponent {
-  appointmentHistory = [
-    {
-      date: '2024-02-16 10:00',
-      service: 'Massage',
-      employee: 'John Doe',
-      rating: 0, // Initial rating set to 0
-    },
-    {
-      date: '2024-02-17 15:30',
-      service: 'Manucure',
-      employee: 'Alice Smith',
-      rating: 0, // Initial rating set to 0
-    },
-    {
-      date: '2024-02-18 11:45',
-      service: 'Coiffure',
-      employee: 'Bob Johnson',
-      rating: 0, // Initial rating set to 0
-    },
-  ];
+  rdvs: any[] = [];
+  userId!: string;
+  constructor(private http: HttpClient) {}
+  ngOnInit() {
+    const userId = localStorage.getItem('userId');
+    this.http
+      .get('http://localhost:3000/historiques/rdvHistory/' + userId)
+      .subscribe(
+        (response: any) => {
+          this.rdvs = response as any[]; // Utilisez l'opérateur de cast ici
+        },
+        (error) => {
+          console.error(
+            "Erreur lors de la récupération de l'historique des rendez-vous:",
+            error
+          );
+        }
+      );
+  }
 
   hoveredRow: number | null = null;
 
@@ -52,7 +51,7 @@ export class HistoriqueComponent {
   }
 
   // Fonction pour définir le rating d'un rendez-vous
-  setRating(appointmentIndex: number, rating: number): void {
+  /*  setRating(appointmentIndex: number, rating: number): void {
     this.appointmentHistory[appointmentIndex].rating = rating;
-  }
+  }*/
 }

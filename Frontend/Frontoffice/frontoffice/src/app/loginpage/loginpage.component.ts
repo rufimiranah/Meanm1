@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./loginpage.component.scss'],
 })
 export class LoginpageComponent {
-  email: string = '';
-  password: string = '';
+  mail: string = '';
+  mdp: string = '';
   loginError: string = '';
 
   constructor(
@@ -21,9 +21,9 @@ export class LoginpageComponent {
   login(form: NgForm): void {
     if (form.valid) {
       const formData = form.value;
-      console.log('Email inserted:', formData.email); // Afficher l'email inséré
-      console.log('Password inserted:', formData.password); // Afficher le mot de passe inséré
-      this.customerService.login(formData.email, formData.password).subscribe({
+      console.log('mail inserted:', formData.mail); // Afficher l'mail inséré
+      console.log('mdp inserted:', formData.mdp); // Afficher le mot de passe inséré
+      this.customerService.login(formData.mail, formData.mdp).subscribe({
         next: (response: any) => {
           console.log('Login successful', response);
           localStorage.setItem('token', response.token); // Stockez le token JWT dans le stockage local
@@ -46,7 +46,7 @@ export class LoginpageComponent {
     } else {
       console.error('Invalid form');
       this.loginError =
-        'Le formulaire est invalide. Veuillez vérifier votre email et votre mot de passe.';
+        'Le formulaire est invalide. Veuillez vérifier votre mail et votre mot de passe.';
     }
   }
 }

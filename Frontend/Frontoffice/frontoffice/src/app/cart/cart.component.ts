@@ -45,9 +45,9 @@ export class CartComponent {
     private http: HttpClient,
     private employeService: EmployeService,
     private cartService: CartserviceService,
-    private cookieService: CookieService,
-    private authService: AuthService,
-    private customerService: CustomerService,
+    ///private cookieService: CookieService,
+    /// private authService: AuthService,
+    /// private customerService: CustomerService,
     private router: Router
   ) {
     this.selectedDate = new Date(); // Initialisez selectedDate avec la date actuelle
@@ -86,6 +86,7 @@ export class CartComponent {
       }
     );
   }
+  //Affichage fotsiny
   convertMinutesToHours(minutes: number): string {
     let hours = Math.floor(minutes / 60);
     let remainingMinutes = minutes % 60;
@@ -97,6 +98,7 @@ export class CartComponent {
       return hours + ' h  ' + remainingMinutes + ' min ';
     }
   }
+  ///Raha hanao annulation, tsy mitovy amin'ny clear
   removeFirstFromCart(): void {
     this.cartService.removeFirstFromCart();
     this.selectedSousPrestations = this.cartService.getCart();
@@ -104,7 +106,7 @@ export class CartComponent {
   getTotalPrice(): number {
     return this.cartService.getTotalPrice();
   }
-
+  //Date sélectionnée front
   onDateChange(event: any) {
     console.log('Date sélectionnée:', event);
     this.selectedDate = event;
@@ -223,11 +225,23 @@ export class CartComponent {
       console.log(this.selectedDate);
       console.log(horaireHeure, horaireMinute);
 
-      // Créer les données du rendez-vous
-      const selectedDate = new Date(this.selectedDate);
-      selectedDate.setHours(horaireHeure, horaireMinute);
+      /*   // Vérifier si this.selectedDate est défini
+      if (!this.selectedDate) {
+        this.selectedDate = new Date(); // Utiliser la date actuelle si elle n'est pas définie
+      }*/
 
+      // Créer les données du rendez-vous
+      const selectedDate = new Date(
+        this.selectedDate.getFullYear(),
+        this.selectedDate.getMonth(),
+        this.selectedDate.getDate(),
+        horaireHeure,
+        horaireMinute
+      );
+      console.log('ity eo amle be zesta', this.selectedDate);
       // Convertir la date en format ISO sans convertir en UTC
+      // Ajouter 3 heures à selectedDate
+      selectedDate.setHours(selectedDate.getHours() + 3);
       const isoStringDate = selectedDate.toISOString();
 
       // Convertir la date en format local
@@ -237,7 +251,7 @@ export class CartComponent {
         id_detail: prestation._id,
         id_utilisateur: this.userId,
         id_employe: this.selectedEmploye._id,
-        dateHeureRDV: dateRdv,
+        dateHeureRDV: isoStringDate,
         statut: 'Termine',
       };
 
