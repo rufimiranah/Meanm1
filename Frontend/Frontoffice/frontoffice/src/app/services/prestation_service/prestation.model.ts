@@ -7,7 +7,8 @@ export interface Services {
   description_service: string;
 }
 export interface Sous_Services {
-  id: string;
+  inCart: boolean;
+  _id: string;
   id_service: string;
   libelle_detail: string;
   delai_detail: number;

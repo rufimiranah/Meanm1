@@ -13,12 +13,11 @@ async function signUp(req, res) {
 
 async function login(req, res) {
   try {
-    const { email, password } = req.body;
-    const token = await customerService.loginCustomer(email, password);
-    res.status(200).json({ token });
+    const loginData = req.body;
+    const result = await customerService.loginCustomer(loginData);
+    res.json(result);
   } catch (error) {
-    console.error("Error during customer login:", error);
-    res.status(500).json({ error: "An error occurred during customer login" });
+    res.status(500).json({ message: error.message });
   }
 }
 

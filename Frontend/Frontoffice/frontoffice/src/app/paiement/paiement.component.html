@@ -1,0 +1,49 @@
+<app-navbar></app-navbar>
+<div class="paycontainer">
+  <div class="row">
+    <div>
+      <div class="col-md-6">
+        <h2>Vos données pour le paiement</h2>
+        <p>Pour l'instant, nous avons que le paiement par carte</p>
+        <p style="font-family: lato">
+          Votre card code<span style="color: red"> * </span>
+        </p>
+        <input
+          type="text"
+          name="cardcode"
+          ngModel
+          placeholder="Cardcode"
+          aria-p="Cardcode"
+          style="font-family: lato"
+          required
+        />
+        <button (click)="submitPayment()">Soumettre le paiement</button>
+      </div>
+      <div class="col-md-4">
+        <div class="card" *ngIf="rdvData">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Détails du paiement</h5>
+              <p class="card-text">ID du rendez-vous : {{ rdvData.id_rdv }}</p>
+              <p class="card-text">ID de l'utilisateur : {{ userId }}</p>
+              <p>ID du détail : {{ rdvData.id_detail }}</p>
+              <p class="card-text">
+                ID du rendez-vous : {{ rdvData.dateHeureRDV }}
+              </p>
+              <p class="card-text">Montant total : {{ totalPrice }}</p>
+              <p class="card-text">
+                Nom de la prestation : {{ prestationDetails.nom }}
+              </p>
+              <p class="card-text">
+                Délai de la prestation : {{ prestationDetails.delai }}
+              </p>
+              <p class="card-text">
+                Prix de la prestation : {{ prestationDetails.prix }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
