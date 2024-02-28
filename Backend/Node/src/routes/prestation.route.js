@@ -9,4 +9,5 @@ router.get(
   prestationsController.getSousPrestationsById
 );
 
+router.get("/sousprestations", prestationsController.getAllSousPrestations);
 module.exports = router;

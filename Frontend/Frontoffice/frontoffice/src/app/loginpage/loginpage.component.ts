@@ -21,22 +21,30 @@ export class LoginpageComponent {
   login(form: NgForm): void {
     if (form.valid) {
       const formData = form.value;
+      console.log('Email inserted:', formData.email); // Afficher l'email inséré
+      console.log('Password inserted:', formData.password); // Afficher le mot de passe inséré
       this.customerService.login(formData.email, formData.password).subscribe({
-        next: (response) => {
+        next: (response: any) => {
           console.log('Login successful', response);
-          this.router.navigate(['/pageAccueilClient']);
-          // Handle successful login, such as redirecting to another page
+          localStorage.setItem('token', response.token); // Stockez le token JWT dans le stockage local
+          localStorage.setItem('userId', response.userId);
+          this.router.navigate(['/historique']);
         },
-        error: (error) => {
+        error: (error: any) => {
           console.error('Error during login', error);
-          // Handle login error, such as displaying an error message
-          this.loginError =
-            'Une erreur est survenue lors de la connexion. Veuillez vérifier votre email et votre mot de passe.';
+          if (error.status === 500) {
+            this.loginError =
+              'Une erreur interne est survenue. Veuillez réessayer plus tard.';
+          } else if (error.status === 401 || error.status === 404) {
+            this.loginError = 'Adresse e-mail ou mot de passe incorrect.';
+          } else {
+            this.loginError =
+              'Une erreur inattendue est survenue. Veuillez réessayer plus tard.';
+          }
         },
       });
     } else {
       console.error('Invalid form');
-      // Handle invalid form submission
       this.loginError =
         'Le formulaire est invalide. Veuillez vérifier votre email et votre mot de passe.';
     }

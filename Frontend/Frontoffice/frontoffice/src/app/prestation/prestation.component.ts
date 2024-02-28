@@ -4,7 +4,8 @@ import {
   Services,
   Sous_Services,
 } from '../services/prestation_service/prestation.model';
-
+import { CartserviceService } from '../services/Cart_service/cartservice.service';
+import { CookieService } from 'ngx-cookie-service';
 @Component({
   selector: 'app-prestation',
   templateUrl: './prestation.component.html',
@@ -23,15 +24,23 @@ export class PrestationComponent implements OnInit {
   ];
   i: any;
   selectedPrestation!: Services;
+  selectedSousPrestations: Sous_Services[] = [];
   // Assurez-vous que prestations est un tableau
 
   constructor(
     private prestationService: PrestationService,
-    private cd: ChangeDetectorRef
+    private cartService: CartserviceService,
+    private cd: ChangeDetectorRef,
+    private cookieService: CookieService
   ) {}
 
   ngOnInit(): void {
     this.getPrestations();
+
+    const savedCartItems = this.cookieService.get('cartItems');
+    if (savedCartItems) {
+      this.selectedSousPrestations = JSON.parse(savedCartItems);
+    }
   }
 
   getPrestations(): void {
@@ -50,10 +59,37 @@ export class PrestationComponent implements OnInit {
     this.prestationService
       .getSousPrestations(id_service)
       .subscribe((response: any) => {
+        this.sousPrestations = response.map((item: any) => ({
+          ...item,
+          inCart: false,
+        }));
         this.sousPrestations = response; // affecter directement la réponse de l'API à sousPrestations
         this.cd.detectChanges();
         console.log('Response from API:', response);
         console.log('sousPrestations:', this.sousPrestations);
       });
+  }
+  convertMinutesToHours(minutes: number): string {
+    let hours = Math.floor(minutes / 60);
+    let remainingMinutes = minutes % 60;
+    if (hours === 0) {
+      return remainingMinutes + ' min';
+    } else if (remainingMinutes === 0) {
+      return hours + ' h ';
+    } else {
+      return hours + ' h  ' + remainingMinutes + ' min ';
+    }
+  }
+  addToCart(sousPrestation: Sous_Services): void {
+    if (sousPrestation.inCart) {
+      sousPrestation.inCart = false;
+      this.cartService.removeFirstFromCart();
+    } else {
+      sousPrestation.inCart = true;
+      this.cartService.addToCart(sousPrestation);
+    }
+    const cartItems = this.cartService.getCart(); // Obtenez les articles du panier
+    this.cookieService.set('cartItems', JSON.stringify(cartItems)); // Sauvegardez les articles du panier dans un cookie
+    console.log(this.cartService.getCart());
   }
 }

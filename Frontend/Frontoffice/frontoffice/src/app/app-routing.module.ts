@@ -6,6 +6,10 @@ import { SignupComponent } from './signup/signup.component';
 import { HistoriqueComponent } from './historique/historique.component';
 import { NotificationComponent } from './notification/notification.component';
 import { PrestationComponent } from './prestation/prestation.component';
+import { CartComponent } from './cart/cart.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
+import { LogoutComponent } from './logout/logout.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -21,6 +25,16 @@ const routes: Routes = [
     path: 'prestation',
     component: PrestationComponent,
   },
+  {
+    path: 'cart',
+    component: CartComponent,
+  },
+  {
+    path: 'datepicker',
+    component: DatePickerComponent,
+  },
+  { path: 'logout', component: LogoutComponent },
+  { path: 'paiement', component: PaiementComponent },
 ];
 
 @NgModule({
