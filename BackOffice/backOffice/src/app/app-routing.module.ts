@@ -11,6 +11,7 @@ import { ListeEmployeComponent } from './liste-employe/liste-employe.component';
 import { ListeRdvEmployeComponent } from './liste-rdv-employe/liste-rdv-employe.component';
 import { ModificationServiceComponent } from './modification-service/modification-service.component';
 import { ModificationSousServicesComponent } from './modification-sous-services/modification-sous-services.component';
+import { ModificationHoraireComponent } from './modification-horaire/modification-horaire.component';
 
 const routes: Routes = [
   { path: '', 
@@ -38,8 +39,9 @@ const routes: Routes = [
       path: 'modificationServices/:idService', component: ModificationServiceComponent 
     },
     {
-      path: 'modificationSousServices/:idSousService', component: ModificationSousServicesComponent 
+      path: 'modificationHoraire/:idEmploye', component: ModificationHoraireComponent 
     }
+
   ]
 
   },

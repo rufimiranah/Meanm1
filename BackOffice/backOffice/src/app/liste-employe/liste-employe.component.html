@@ -22,12 +22,14 @@
                 <td>{{listeEmploye.description}}</td>
                 <td >{{listeEmploye.debutHeure}} AM</td>
                 <td >{{listeEmploye.finHeure}} PM</td>
+                <a [routerLink]="['/modificationHoraire',listeEmploye._id]">
                 <button type="button" class="btn btn-primary btn-sm">Modifier l'horaire de travail</button>
+                </a>
+                <a [routerLink]="['/listeRDVEmploye',listeEmploye._id]">
                 <button type="button" class="btn btn-succes btn-icon-text btn-sm" >
-                  <a [routerLink]="['/listeRDVEmploye',listeEmploye._id]">
-                  <i class="ti-file btn-icon-append"></i>   
-                  </a>                       
+                  <i class="ti-file btn-icon-append"></i>                          
                 </button>
+                </a>
                 <!---<td class="font-weight-medium"><div class="badge badge-warning">Modifier l'horaire de travail</td>--->
               </tr>
             </tbody>
