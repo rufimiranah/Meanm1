@@ -1,0 +1,26 @@
+<div class="content-wrapper">
+<div class="row">
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Modification du service</h4>
+        <p class="card-description">
+          {{listeServices?.libelle_service}}
+        </p>
+        <form class="forms-sample">
+          <div class="form-group">
+            <label for="exampleInputName1">Nom du service</label>
+            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="libelle_service" name="libelle_service" value="{{listeServices?.libelle_service}}">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputName1">Description</label>
+            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="description_service" name="description_service" value="{{listeServices?.description_service}}">
+          </div>
+          <button type="submit" class="btn btn-primary mr-2" (click)="modificationService(listeServices._id)">Submit</button>
+          <a [routerLink]="['/liste-services']"><button class="btn btn-light">Cancel</button></a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

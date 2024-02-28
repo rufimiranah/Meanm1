@@ -1,0 +1,23 @@
+<div class="content-wrapper">
+    <div class="col-md-14 grid-margin transparent">
+        <div class="row">
+          <div class="col-md-6 mb-4 stretch-card transparent" *ngFor="let listeSousServices of listeSousServices">
+            <div class="card card-tale">
+              <div class="card-body">
+                <p class="mb-4">Sous-service : </p>
+                <p class="fs-30 mb-2">{{listeSousServices.libelle_detail}}</p>
+                <p>{{listeSousServices.description_detail}}</p>
+                <p>Prix : {{listeSousServices.prix_detail}}</p>
+                <p>Delai : {{listeSousServices.delai_detail}}</p>
+                <p>Comission : {{listeSousServices.comission}}</p>
+                <p>Service : {{listeSousServices.id_service.libelle_service}}</p>
+                <a [routerLink]="['/modificationSousServices',listeSousServices._id]"><button type="button" class="btn btn-dark btn-icon-text">
+                    Modifier
+                    <i class="ti-file btn-icon-append"></i>                          
+                </button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
