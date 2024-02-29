@@ -10,10 +10,15 @@ import { Router } from '@angular/router';
 
 export class SousServicesComponent {
   listeSousServices : any ;
+  session:any;
 
   constructor(private SousServicesService: SousServicesService,private router: Router){}
 
   ngOnInit(): void {
+    const sessionRole = localStorage.getItem('session')
+      if(sessionRole){
+        this.session =JSON.parse(sessionRole);
+      }
     this.getListeSousServices();
   }
 

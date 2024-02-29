@@ -22,7 +22,7 @@
                 <td>{{listeEmploye.description}}</td>
                 <td >{{listeEmploye.debutHeure}} AM</td>
                 <td >{{listeEmploye.finHeure}} PM</td>
-                <a [routerLink]="['/modificationHoraire',listeEmploye._id]">
+                <a [routerLink]="['/modificationHoraire',listeEmploye._id]" *ngIf="session.id_role.nom_role == 'Manager'">
                 <button type="button" class="btn btn-primary btn-sm">Modifier l'horaire de travail</button>
                 </a>
                 <a [routerLink]="['/listeRDVEmploye',listeEmploye._id]">

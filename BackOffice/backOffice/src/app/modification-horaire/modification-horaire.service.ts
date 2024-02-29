@@ -15,6 +15,6 @@ export class ModificationHoraireService {
 
   modificationHoraire(idEmploye:any, body:any){
     const URL_MODIFY_HORAIRE="http://localhost:3000/employe/modifyHoraire/"+idEmploye;
-    return this.http.post(URL_MODIFY_HORAIRE,body);
+    return this.http.put(URL_MODIFY_HORAIRE,body);
   }
 }

@@ -15,6 +15,6 @@ export class ModificationSousServicesService {
 
   modifySousService(idSousService:any,body:any){
     const URL_MODIFY_SOUS_SERVICE="http://localhost:3000/sous-services/modifySousService/"+idSousService;
-    return this.http.post(URL_MODIFY_SOUS_SERVICE,body);
+    return this.http.put(URL_MODIFY_SOUS_SERVICE,body);
   }
 }

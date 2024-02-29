@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -21,6 +20,11 @@ import { ListeRdvEmployeComponent } from './liste-rdv-employe/liste-rdv-employe.
 import { ModificationServiceComponent } from './modification-service/modification-service.component';
 import { ModificationSousServicesComponent } from './modification-sous-services/modification-sous-services.component';
 import { ModificationHoraireComponent } from './modification-horaire/modification-horaire.component';
+import { ListeOffreComponent } from './liste-offre/liste-offre.component';
+import { OffresComponent } from './offres/offres.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { ConfirmationCompteComponent } from './confirmation-compte/confirmation-compte.component';
+import { Router } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -40,13 +44,17 @@ import { ModificationHoraireComponent } from './modification-horaire/modificatio
     ListeRdvEmployeComponent,
     ModificationServiceComponent,
     ModificationSousServicesComponent,
-    ModificationHoraireComponent
+    ModificationHoraireComponent,
+    ListeOffreComponent,
+    OffresComponent,
+    StatistiquesComponent,
+    ConfirmationCompteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

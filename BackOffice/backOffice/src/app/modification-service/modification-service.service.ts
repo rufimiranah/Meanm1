@@ -15,6 +15,6 @@ export class ModificationServiceService {
 
   modifyService(idService:any , body:any){
     const URL_MODIFY_SERVICE = "http://localhost:3000/services/modifyService/"+idService;
-    return this.http.post(URL_MODIFY_SERVICE,body);
+    return this.http.put(URL_MODIFY_SERVICE,body);
   }
 }

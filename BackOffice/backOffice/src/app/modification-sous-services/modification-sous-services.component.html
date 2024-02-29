@@ -9,23 +9,23 @@
             <form class="forms-sample">
               <div class="form-group">
                 <label for="exampleInputName1">Nom du service</label>
-                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="libelle_detail" name="libelle_detail" value="{{listeSousServices?.libelle_detail}}">
+                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="libelle_detail" name="libelle_detail" >
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Description</label>
-                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="description_detail" name="description_detail" value="{{listeSousServices?.description_detail}}">
+                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="description_detail" name="description_detail">
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Prix</label>
-                <input type="number" class="form-control" id="exampleInputName1" [(ngModel)]="prix_detail" name="prix_detail" value="{{listeSousServices?.prix_detail}}">
+                <input type="number" class="form-control" id="exampleInputName1" [(ngModel)]="prix_detail" name="prix_detail" >
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Delai</label>
-                <input type="number" class="form-control" id="exampleInputName1" [(ngModel)]="delai_detail" name="delai_detail" value="{{listeSousServices?.delai_detail}}">
+                <input type="number" class="form-control" id="exampleInputName1" [(ngModel)]="delai_detail" name="delai_detail">
               </div>
               <div class="form-group">
                 <label for="exampleInputName1">Comission</label>
-                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="comission" name="comission" value="{{listeSousServices?.comission}} ">
+                <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="comission" name="comission">
               </div>
               <button type="submit" class="btn btn-info mr-2" (click)="modificationSousServices(listeSousServices._id)" >Submit</button>
               <a [routerLink]="['/liste-sous-services']"><button class="btn btn-light">Cancel</button></a>

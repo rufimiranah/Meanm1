@@ -12,4 +12,9 @@ export class DescriptionService {
     const URL_DESCRIPTION = "http://localhost:3000/employe/ajoutDescription/"+idEmploye;
     return this.http.post(URL_DESCRIPTION,body);
   }
+
+  listeEmployeById(idEmploye:any){
+    const URL_LIST_EMPLOYE_ID= "http://localhost:3000/employe/listeemployeId/"+idEmploye;
+    return this.http.get(URL_LIST_EMPLOYE_ID);
+  }
 }
