@@ -38,7 +38,8 @@ export class ModificationHoraireComponent {
     }
       this.ModificationHoraireService.modificationHoraire(idEmploye,body).subscribe({
         next:(res:any) => {
-          this.resultatUpdate = res ;
+          this.resultatUpdate = res;
+          console.log(this.resultatUpdate);
           this.router.navigate(['/liste-employe']);
         }
       })

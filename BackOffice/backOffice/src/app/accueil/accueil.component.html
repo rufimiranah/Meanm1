@@ -1,6 +1,6 @@
 <div class="content-wrapper">
 <div class="row">
-    <div class="col-md-14 grid-margin stretch-card" style="margin-left:150px">
+    <div class="col-md-14 grid-margin stretch-card" style="margin-left:120px">
         <div class="card">
           <div class="card-body">
             <p class="card-title mb-0">En cours</p>
@@ -22,7 +22,7 @@
                     <td>{{listeRDV.id_utilisateur.name}}</td>
                     <td>{{listeRDV.id_employe.name}}</td>
                     <td>{{listeRDV.dateHeureRDV | date: 'dd-MM-yyyy HH:mm'}}</td>
-                    <td>{{(listeRDV.id_detail.prix_detail * listeRDV.id_detail.comission)/100}} ar</td>
+                    <td>{{(listeRDV.id_detail.prix_detail * listeRDV.id_detail.comission)/100}} AR</td>
                     <!---<td class="font-weight-medium" *ngIf="listeRDV.statut== 'Termine'"><div class="badge badge-success">Termine</div></td>-->
                     <td class="font-weight-medium" *ngIf="listeRDV.statut== 'En cours'"><div class="badge badge-warning">En cours</div></td>
                     <td><button type="button" class="btn btn-primary btn-sm" (click)="changeStatut(listeRDV._id , listeRDV.statut)">Termine ?</button></td>
@@ -36,7 +36,7 @@
           </div>
         </div>
     </div>
-        <div class="col-md-14 grid-margin stretch-card" style="margin-left:150px">
+        <div class="col-md-14 grid-margin stretch-card" style="margin-left:130px">
             <div class="card">
                 <div class="card-body">
                 <p class="card-title mb-0">Termine</p>
@@ -58,7 +58,7 @@
                         <td>{{listeRDVTermine.id_utilisateur.name}}</td>
                         <td>{{listeRDVTermine.id_employe.name}}</td>
                         <td>{{listeRDVTermine.dateHeureRDV | date: 'dd-MM-yyyy HH:mm'}}</td>
-                        <td>{{(listeRDVTermine.id_detail.prix_detail * listeRDVTermine.id_detail.comission)/100}} ar</td>
+                        <td>{{(listeRDVTermine.id_detail.prix_detail * listeRDVTermine.id_detail.comission)/100}} AR</td>
                         <td class="font-weight-medium" *ngIf="listeRDVTermine.statut== 'Termine'"><div class="badge badge-success">Termine</div></td>
                         </tr>
                     </tbody>

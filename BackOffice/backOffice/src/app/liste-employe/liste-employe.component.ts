@@ -10,10 +10,15 @@ import { ListeEmployeService } from './liste-employe.service';
 })
 export class ListeEmployeComponent {
   listeEmploye : any ;
+  session:any;
 
   constructor(private ListeEmployeService:ListeEmployeService){}
 
   ngOnInit(): void {
+    const sessionRole = localStorage.getItem('session');
+    if(sessionRole){
+      this.session = JSON.parse(sessionRole);
+    }
     this.getListeEmploye()
   }
 

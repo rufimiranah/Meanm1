@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+ session : any;
+
+  ngOnInit(): void {
+    this.getSession();
+  }
+
+  getSession(){
+    const listeSession = localStorage.getItem('session');
+    if(listeSession){
+      this.session= JSON.parse(listeSession);
+    }
+  }
 
 }

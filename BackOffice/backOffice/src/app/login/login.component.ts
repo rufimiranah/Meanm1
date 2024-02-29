@@ -24,7 +24,16 @@ export class LoginComponent {
         if(res.message === "OK"){
           //console.log(res)
           localStorage.setItem('session', JSON.stringify(res.value));
-          this.router.navigate(['/liste-services']);
+          const session = localStorage.getItem('session');
+          if(session){
+            const role = JSON.parse(session);
+            if(role.id_role.nom_role==='Manager'){
+              this.router.navigate(['/liste-services']);
+            }
+            if(role.id_role.nom_role==='Employé'){
+              this.router.navigate(['/accueil']);
+            }
+          }
         }else{
           this.router.navigate(['/login']);
         }

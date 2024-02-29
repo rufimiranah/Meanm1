@@ -7,7 +7,7 @@
                         <p class="mb-4">Service :</p>
                         <p class="fs-30 mb-2">{{listeService.libelle_service}}</p>
                         <p>{{listeService.description_service}}</p>
-                        <a [routerLink]="['/modificationServices',listeService._id]"><button type="button" class="btn btn-dark btn-icon-text">
+                        <a [routerLink]="['/modificationServices',listeService._id]" *ngIf="session.id_role.nom_role == 'Manager'"><button type="button" class="btn btn-dark btn-icon-text">
                             Modifier
                             <i class="ti-file btn-icon-append"></i>                          
                         </button></a>

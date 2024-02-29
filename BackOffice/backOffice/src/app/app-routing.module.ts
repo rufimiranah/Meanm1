@@ -12,6 +12,11 @@ import { ListeRdvEmployeComponent } from './liste-rdv-employe/liste-rdv-employe.
 import { ModificationServiceComponent } from './modification-service/modification-service.component';
 import { ModificationSousServicesComponent } from './modification-sous-services/modification-sous-services.component';
 import { ModificationHoraireComponent } from './modification-horaire/modification-horaire.component';
+import { ListeOffreComponent } from './liste-offre/liste-offre.component';
+import { OffresComponent } from './offres/offres.component';
+import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ConfirmationCompteComponent } from './confirmation-compte/confirmation-compte.component';
 
 const routes: Routes = [
   { path: '', 
@@ -40,12 +45,26 @@ const routes: Routes = [
     },
     {
       path: 'modificationHoraire/:idEmploye', component: ModificationHoraireComponent 
-    }
+    },
+    {
+      path: 'modificationSousServices/:idSousService', component: ModificationSousServicesComponent 
+    },
+    {
+      path: 'liste-offre', component:ListeOffreComponent
+    },
+    {
+      path: 'offres', component:OffresComponent
+    },
+    {
+      path: 'statistiques', component:StatistiquesComponent
+    },
 
   ]
 
   },
   { path: 'login', component:LoginComponent },
+  { path: 'inscription', component:InscriptionComponent },
+  { path: 'confirmation',component:ConfirmationCompteComponent}
 
 ];
 
