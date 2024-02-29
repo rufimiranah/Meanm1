@@ -18,7 +18,9 @@
       <div class="mt-4">
         <h5 style="font-weight: bold">Êtes-vous déjà membre ?</h5>
       </div>
-      <div class="alert alert-danger" role="alert"></div>
+      <div class="alert alert-danger" role="alert" *ngIf="loginError">
+        {{ loginError }}
+      </div>
       <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <div class="mail mt-3">
           <p style="font-family: lato">
@@ -86,12 +88,5 @@
       <img src="../../assets/images/peine.png" />
     </div>
   </div>
-  <div class="footer">
-    <div class="row">
-      <p>
-        Copyright: RAHAJASON Aroniaina Saotra & RAZAKAMBOLOLONA Mirantsoa
-        Rufinah
-      </p>
-    </div>
-  </div>
+  <app-footer></app-footer>
 </body>

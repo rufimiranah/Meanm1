@@ -22,6 +22,8 @@ import { CalendarModule } from 'primeng/calendar';
 import { PaiementComponent } from './paiement/paiement.component';
 import { LogoutComponent } from './logout/logout.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { PrestationVisiteComponent } from './prestation-visite/prestation-visite.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import { JwtModule } from '@auth0/angular-jwt';
     DatePickerComponent,
     PaiementComponent,
     LogoutComponent,
+    PrestationVisiteComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

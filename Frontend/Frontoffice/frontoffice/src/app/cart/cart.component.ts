@@ -5,11 +5,15 @@ import { NgModel } from '@angular/forms';
 import { Employe_model } from '../services/Employe_service/employe.model';
 import { HttpClient } from '@angular/common/http';
 import { Sous_Services } from '../services/prestation_service/prestation.model';
+import { PrestationService } from '../services/prestation_service/prestation.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Rdv_model } from '../services/Rdv_service/Rdv.model';
 import { AuthService } from '../services/Auth_service/Auth.service';
 import { CustomerService } from '../services/Customer_service/customer-service.service';
 import { Router } from '@angular/router';
+import { map } from 'rxjs/internal/operators/map';
+import { forkJoin } from 'rxjs/internal/observable/forkJoin';
+import { RdvService } from '../services/Rdv_service/rdv.service';
 
 @Component({
   selector: 'app-cart',
@@ -40,15 +44,18 @@ export class CartComponent {
   userId!: string | null;
   cartData: any; // Ajoutez cette ligne
   horaire!: number;
+  availableHours!: number[];
 
   constructor(
     private http: HttpClient,
     private employeService: EmployeService,
     private cartService: CartserviceService,
+    private prestationService: PrestationService,
     ///private cookieService: CookieService,
     /// private authService: AuthService,
     /// private customerService: CustomerService,
-    private router: Router
+    private router: Router,
+    private rdvService: RdvService
   ) {
     this.selectedDate = new Date(); // Initialisez selectedDate avec la date actuelle
     this.minDate = new Date(); // Initialisez minDate avec la date actuelle
@@ -125,8 +132,10 @@ export class CartComponent {
       let rdvExist = this.rdvs.find(
         (rdv: Rdv_model) =>
           rdv.id_employe === this.selectedEmploye._id &&
-          rdv.dateRdv.getHours() === heure
+          new Date(rdv.dateRdv).setMinutes(0, 0, 0) ===
+            this.selectedDate.setHours(heure, 0, 0, 0)
       );
+      console.log(rdvExist); ///tsy metyyyy
 
       if (!rdvExist) {
         this.horaires.push(this.formatHeure(heure));
@@ -135,7 +144,7 @@ export class CartComponent {
           this.horaire = heure;
         }
       }
-      heure += 0.25; // Ajoute 15 minutes
+      heure += 0.5;
     }
     console.log('Horaires disponibles:', this.horaires);
 

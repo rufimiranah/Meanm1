@@ -10,6 +10,7 @@ import { CartComponent } from './cart/cart.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { LogoutComponent } from './logout/logout.component';
 import { PaiementComponent } from './paiement/paiement.component';
+import { PrestationVisiteComponent } from './prestation-visite/prestation-visite.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path: 'prestation',
     component: PrestationComponent,
+  },
+  {
+    path: 'prestation_visite',
+    component: PrestationVisiteComponent,
   },
   {
     path: 'cart',

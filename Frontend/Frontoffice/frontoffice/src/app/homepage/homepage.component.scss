@@ -101,7 +101,7 @@
     margin-top: 90px; /* Ajouter de l'espace en haut de la section .reservation */
 }
 /* Styles spécifiques pour le lien avec routerLink="/reserve" */
-.reservation a[routerLink="/reserve"] {
+.reservation a[routerLink="/login"] {
     display: inline-block;
     padding: 10px 20px;
     border: 2px solid black;
