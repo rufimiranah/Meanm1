@@ -22,13 +22,13 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item" *ngIf="session.id_role.nom_role == 'Employé'">
-            <a class="nav-link" [routerLink]="['/accueil']">
+            <a class="nav-link" [routerLink]="['app/accueil']">
               <i class="icon-grid menu-icon"></i>
               <span class="menu-title">Taches</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts" [routerLink]="['/statistiques']">
+            <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts" [routerLink]="['app/statistiques']">
               <i class="icon-bar-graph menu-icon"></i>
               <span class="menu-title">Statistiques</span>
             </a>
@@ -41,9 +41,9 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" [routerLink]="['/liste-services']">Services</a></li>
-                <li class="nav-item"> <a class="nav-link" [routerLink]="['/liste-sous-services']">Sous Servives</a></li>
-                <li class="nav-item" *ngIf="session.id_role.nom_role == 'Employé'"> <a class="nav-link" [routerLink]="['/description']"> Profil </a></li>
+                <li class="nav-item"> <a class="nav-link" [routerLink]="['app/liste-services']">Services</a></li>
+                <li class="nav-item"> <a class="nav-link" [routerLink]="['app/liste-sous-services']">Sous Servives</a></li>
+                <li class="nav-item" *ngIf="session.id_role.nom_role == 'Employé'"> <a class="nav-link" [routerLink]="['app/description']"> Profil </a></li>
               </ul>
             </div>
           </li>
@@ -55,7 +55,7 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" [routerLink]="['/liste-employe']"> Liste</a></li>
+                <li class="nav-item"> <a class="nav-link" [routerLink]="['app/liste-employe']"> Liste</a></li>
               </ul>
             </div>
           </li>
@@ -67,8 +67,8 @@
             </a>
             <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" [routerLink]="['offres']"> Liste</a></li>
-                <li class="nav-item"  *ngIf="session.id_role.nom_role == 'Manager'"> <a class="nav-link" [routerLink]="['/liste-offre']"> Ajout</a></li>
+                <li class="nav-item"> <a class="nav-link" [routerLink]="['app/offres']"> Liste</a></li>
+                <li class="nav-item"  *ngIf="session.id_role.nom_role == 'Manager'"> <a class="nav-link" [routerLink]="['app/liste-offre']"> Ajout</a></li>
               </ul>
             </div>
           </li>

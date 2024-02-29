@@ -34,19 +34,11 @@
                 <div class="form-group">
                     <input type="number" class="form-control form-control-lg" [(ngModel)]="finHeure" name="finHeure" id="exampleInputUsername1" placeholder="Fin horaire">
                 </div>
-                <div class="mb-4">
-                  <div class="form-check">
-                    <label class="form-check-label text-muted">
-                      <input type="checkbox" class="form-check-input">
-                      I agree to all Terms & Conditions
-                    </label>
-                  </div>
-                </div>
                 <div class="mt-3">
                   <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" (click)="inscriptionEmploye()">SIGN UP</a>
                 </div>
                 <div class="text-center mt-4 font-weight-light">
-                  Already have an account? <a href="login.html" class="text-primary">Login</a>
+                  Already have an account? <a [routerLink]="['/']" class="text-primary">Login</a>
                 </div>
               </form>
             </div>

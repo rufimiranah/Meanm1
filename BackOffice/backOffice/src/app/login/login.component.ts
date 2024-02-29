@@ -28,10 +28,10 @@ export class LoginComponent {
           if(session){
             const role = JSON.parse(session);
             if(role.id_role.nom_role==='Manager'){
-              this.router.navigate(['/liste-services']);
+              this.router.navigate(['app/liste-services']);
             }
             if(role.id_role.nom_role==='Employé'){
-              this.router.navigate(['/accueil']);
+              this.router.navigate(['app/accueil']);
             }
           }
         }else{

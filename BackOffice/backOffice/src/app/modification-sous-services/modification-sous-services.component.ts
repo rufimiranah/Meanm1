@@ -31,6 +31,11 @@ export class ModificationSousServicesComponent {
       next:(res:any) => {
         console.log(res);
           this.listeSousServices = res;
+          this.libelle_detail =this.listeSousServices.libelle_detail;
+          this.delai_detail = this.listeSousServices.delai_detail;
+          this.prix_detail =this.listeSousServices.prix_detail;
+          this.description_detail=this.listeSousServices.description_detail;
+          this.comission =this.listeSousServices.comission;
       }
     })
   }
@@ -45,7 +50,6 @@ export class ModificationSousServicesComponent {
     }
       this.ModificationSousServicesService.modifySousService(idSousService,body).subscribe({
         next:(res:any) => {
-          console.log(res);
           this.resultat = res ;
           this.router.navigate(['/liste-sous-services']);
         }

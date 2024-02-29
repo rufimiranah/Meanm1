@@ -19,7 +19,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ConfirmationCompteComponent } from './confirmation-compte/confirmation-compte.component';
 
 const routes: Routes = [
-  { path: '', 
+  { path: '', component:LoginComponent },
+  { path: 'app', 
   component:TemplateComponent,
   children: [
     {
@@ -62,7 +63,6 @@ const routes: Routes = [
   ]
 
   },
-  { path: 'login', component:LoginComponent },
   { path: 'inscription', component:InscriptionComponent },
   { path: 'confirmation',component:ConfirmationCompteComponent}
 

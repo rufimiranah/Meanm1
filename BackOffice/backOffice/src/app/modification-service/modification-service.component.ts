@@ -27,6 +27,8 @@ export class ModificationServiceComponent {
     this.ModificationServiceService.listeServicesId(idService).subscribe({
       next:(res:any) => {
           this.listeServices = res;
+          this.libelle_service = this.listeServices.libelle_service;
+          this.description_service = this.listeServices.description_service;
       }
     })
   }

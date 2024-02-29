@@ -10,11 +10,11 @@
         <form class="forms-sample">
           <div class="form-group">
             <label for="exampleInputName1">Nom du service</label>
-            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="libelle_service" name="libelle_service" value="{{listeServices?.libelle_service}}">
+            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="libelle_service" name="libelle_service">
           </div>
           <div class="form-group">
             <label for="exampleInputName1">Description</label>
-            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="description_service" name="description_service" value="{{listeServices?.description_service}}">
+            <input type="text" class="form-control" id="exampleInputName1" [(ngModel)]="description_service" name="description_service" >
           </div>
           <button type="submit" class="btn btn-primary mr-2" (click)="modificationService(listeServices._id)">Submit</button>
           <a [routerLink]="['/liste-services']"><button class="btn btn-light">Cancel</button></a>
